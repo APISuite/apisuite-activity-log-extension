@@ -1,0 +1,30 @@
+{
+  "name": "apisuite-activity-log-extension",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "npm run build:live",
+    "build": "tsc -p .",
+    "build:live": "nodemon --watch 'src/**/*.ts' --exec \"ts-node\" src/index.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "amqp-connection-manager": "3.2.1",
+    "amqplib": "0.6.0",
+    "convict": "6.0.0",
+    "pg": "8.5.1",
+    "pino": "^6.11.0"
+  },
+  "devDependencies": {
+    "@types/amqp-connection-manager": "^2.0.10",
+    "@types/amqplib": "^0.5.17",
+    "@types/convict": "^5.2.2",
+    "@types/node": "^14.14.22",
+    "@types/pino": "^6.3.5",
+    "nodemon": "^2.0.7",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.3"
+  }
+}
