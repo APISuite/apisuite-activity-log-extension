@@ -37,7 +37,7 @@ const onMessage = (data: amqplib.ConsumeMessage | null): void => {
       case routingKeys.ORG_USER_INVITED:
       case routingKeys.USER_PASSWORD:
       case routingKeys.USER_DELETED:
-        return handlers.handleLogEntry(msg)
+        handlers.handleLogEntry(msg).catch()
     }
   } catch(err) {
     log.error(err, '[msg broker onMessage]')
