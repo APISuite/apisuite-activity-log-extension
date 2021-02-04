@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/index.ts",
   "scripts": {
-    "start-consumer": "ts-node dist/msg-broker/index.js",
+    "start-consumer": "ts-node dist/consumer/index.js",
     "start-server": "ts-node dist/server/index.js",
     "dev-consumer": "nodemon --watch 'src/**/*.ts' --exec \"ts-node\" src/msg-broker/index.ts",
     "dev-server": "nodemon --watch 'src/**/*.ts' --exec \"ts-node\" src/server/index.ts",
