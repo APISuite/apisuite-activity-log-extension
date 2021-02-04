@@ -1,4 +1,5 @@
 export interface LogEntry {
+  type: string
   userID?: string
   appID?: string
   organizationID?: string

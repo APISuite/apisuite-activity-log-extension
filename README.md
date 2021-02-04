@@ -41,6 +41,7 @@ Required schema for the activity log:
 
 ```
 CREATE TABLE logs (
+    type TEXT,
     user_id TEXT,
     app_id TEXT,
     organization_id TEXT,
@@ -48,6 +49,7 @@ CREATE TABLE logs (
     timestamp TIMESTAMP
 );
 
+CREATE INDEX idx_logs_user_id ON logs (type);
 CREATE INDEX idx_logs_user_id ON logs (user_id);
 CREATE INDEX idx_logs_app_id ON logs (app_id);
 CREATE INDEX idx_logs_organization_id ON logs (organization_id);

@@ -18,9 +18,10 @@ export default class Postgres implements Database {
     try {
       const client = await this.pool.connect()
 
-      const sql = `INSERT INTO logs (user_id, app_id, organization_id, log, timestamp) 
-        VALUES ($1, $2, $3, $4, $5)`
+      const sql = `INSERT INTO logs (type, user_id, app_id, organization_id, log, timestamp) 
+        VALUES ($1, $2, $3, $4, $5, $6)`
       await client.query(sql, [
+        entry.type,
         entry.userID,
         entry.appID,
         entry.organizationID,

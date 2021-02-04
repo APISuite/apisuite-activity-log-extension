@@ -3,10 +3,11 @@ import { Database } from '../db/types'
 
 const db: Database = DB()
 
-const handleLogEntry = async (msg: any): Promise<void> => {
+const handleLogEntry = async (event: string, msg: any): Promise<void> => {
   if (!msg.timestamp) return
 
   await db.writeEntry({
+    type: event,
     userID: msg.user_id,
     appID: msg.app_id,
     organizationID: msg.organization_id,
