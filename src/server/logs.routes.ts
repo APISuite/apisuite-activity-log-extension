@@ -14,7 +14,7 @@ class LogsRouter {
     return router
   }
 
-  private async getLogs(req: express.Request, res: express.Response) {
+  private getLogs = async (req: express.Request, res: express.Response) => {
     const logs: LogEntry[] = await this.db.getEntries()
     res.send(logs)
   }

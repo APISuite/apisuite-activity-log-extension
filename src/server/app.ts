@@ -25,12 +25,12 @@ export default class App {
   private setupRoutes(app: express.Application) {
     const logsRouter = new LogsRouter(this.db)
 
+    app.use('/logs', logsRouter.getRoutes())
+
     app.use('/', (req: express.Request, res: express.Response) => {
       res.send({
         version: 'v1.0.0',
       })
     })
-
-    app.use('/logs', logsRouter.getRoutes())
   }
 }

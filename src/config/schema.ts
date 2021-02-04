@@ -5,6 +5,12 @@ export const schema = {
     default: 'development',
     env: 'NODE_ENV',
   },
+  port: {
+    doc: 'Server listen port',
+    format: Number,
+    default: 6006,
+    env: 'API_PORT',
+  },
   dbType: {
     doc: 'Database type. Options: [postgresql]',
     format: String,
