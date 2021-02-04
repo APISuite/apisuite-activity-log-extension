@@ -1,7 +1,7 @@
 import { Pool } from 'pg'
 import log from '../log'
 import config from '../config'
-import { Database, LogEntry } from './db'
+import { Database, LogEntry } from './types'
 
 export default class Postgres implements Database {
   private pool: Pool
@@ -29,6 +29,21 @@ export default class Postgres implements Database {
       ])
 
       client.release()
+    } catch (error) {
+      log.error(error)
+    }
+  }
+
+  // @ts-ignore
+  async getEntries(): Promise<LogEntry[]> {
+    try {
+      const client = await this.pool.connect()
+
+      const sql = `SELECT * FROM logs;`
+      const { rows } = await client.query(sql)
+      client.release()
+
+      return rows
     } catch (error) {
       log.error(error)
     }

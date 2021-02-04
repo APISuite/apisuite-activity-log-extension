@@ -1,6 +1,5 @@
-import log from '../log'
 import DB from '../db'
-import { Database, LogEntry } from '../db/db'
+import { Database } from '../db/types'
 
 const db: Database = DB()
 

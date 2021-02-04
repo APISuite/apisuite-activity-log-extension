@@ -8,4 +8,5 @@ export interface LogEntry {
 
 export abstract class Database {
   abstract writeEntry(entry: LogEntry): Promise<void>
+  abstract getEntries(): Promise<LogEntry[]>
 }
