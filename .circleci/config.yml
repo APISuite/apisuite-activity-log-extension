@@ -5,9 +5,8 @@ jobs:
     docker:
       - image: cimg/node:14.15.5
     steps:
-      - attach_workspace:
-          at: ~/
-      - run: cp -r .ssh ../.ssh && rm -rf .ssh
+      - checkout
+      - run: npm install
       - run: GH_TOKEN=$GH_TOKEN npx semantic-release
       - persist_to_workspace:
           root: ~/
