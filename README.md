@@ -36,7 +36,7 @@ Docker images are available in our [DockerHub](https://hub.docker.com/r/cloudoki
 Every new image is tagged with:
 - commit hash
 - latest (dev-latest and stg-latest from develop and staging respectively)
-- semantic version from `package.json` (only in production)
+- semantic version from `package.json` (only in main branch)
 
 Depending on your goals, you could use a fixed version like `1.0.0` or
 `latest` to simply get the most recent version every time you pull the image.

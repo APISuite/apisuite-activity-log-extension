@@ -33,8 +33,6 @@ workflows:
             branches:
               only:
                 - main
-          requires:
-            - test
       - build:
           context: docker
           filters:

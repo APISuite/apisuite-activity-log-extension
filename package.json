@@ -39,7 +39,7 @@
   "release": {
     "branches": [
       {
-        "name": "production"
+        "name": "main"
       }
     ],
     "plugins": [
