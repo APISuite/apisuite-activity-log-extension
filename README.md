@@ -29,7 +29,23 @@ docker run --env-file .env -p 6006:6006 --network=apisuite-net actlog start-serv
 docker run --env-file .env --network=apisuite-net actlog start-consumer
 ```
 
+## Installing
+
+Docker images are available in our [DockerHub](https://hub.docker.com/r/cloudokihub/apisuite-activity-log-extension).
+
+Every new image is tagged with:
+- commit hash
+- latest (dev-latest and stg-latest from develop and staging respectively)
+- semantic version from `package.json` (only in production)
+
+Depending on your goals, you could use a fixed version like `1.0.0` or
+`latest` to simply get the most recent version every time you pull the image.
+
 ## Requirements
+
+This extension makes use of APISuite's core message queue that should already be in place when installing this extension.
+
+It's also obvsiouly ideal that this component lives in the same network as the core. 
 
 ### Database
 
@@ -59,10 +75,9 @@ CREATE INDEX idx_logs_timestamp ON logs (timestamp asc);
 
 ## Development
 
-`package.json` contains the necessary scripts and dependencies to run the components of this project.
-Typescript is configured to produce source maps, which makes debugger usage possible.
-
-Setup your database according to the instructions provided in this document.
+- Commits should follow [conventional commits](https://www.conventionalcommits.org) spec
+- `package.json` contains the necessary scripts and dependencies to run the components of this project
+- Typescript is configured to produce source maps, which makes debugger usage possible
 
 ### Environment variables
 
